@@ -48,7 +48,10 @@ const Header = () => {
         <div className="flex items-start justify-between">
           {/* Logo */}
           <div ref={logoRef} className="opacity-0 translate-y-6">
-            <Logo />
+            <Logo
+              isScrolled={isScrolled}
+              isAboveBreakpoint={isAboveBreakpoint}
+            />
           </div>
 
           {/* Buttons */}
