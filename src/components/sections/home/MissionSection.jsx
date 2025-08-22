@@ -63,14 +63,6 @@ const MissionSection = () => {
   const missionRefs = useRef([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const headerRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-  const headingRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.2 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
   const counterRef = useScrollAnimation(
     { y: 0, opacity: 1, duration: 0.8, delay: 0.4 },
     { trigger: sectionRef.current, start: "top 80%" }
@@ -110,10 +102,7 @@ const MissionSection = () => {
       {/* Heading */}
       <div className="flex w-full flex-col items-center justify-center gap-4 rounded-[50%] bg-gradient-to-b from-[rgba(55,57,129,0.02)] to-[rgba(255,225,229,0.0)] px-4 md:px-8 lg:px-12">
         <div className="relative flex w-full flex-col items-center gap-y-2.5 p-6 md:w-[70%] md:p-8 lg:w-[60%]">
-          <div
-            ref={headerRef}
-            className="flex items-center justify-center gap-1.5 font-inter text-sm font-semibold text-[#165BB8] md:text-base"
-          >
+          <div className="flex items-center justify-center gap-1.5 font-inter text-sm font-semibold text-[#165BB8] md:text-base">
             <svg width="6" height="6" xmlns="http://www.w3.org/2000/svg">
               <circle cx="3" cy="3" r="3" fill="#165BB8" />
             </svg>
@@ -123,7 +112,6 @@ const MissionSection = () => {
             </svg>
           </div>
           <Heading
-            ref={headingRef}
             level={2}
             size="sm"
             className="opacity-0 translate-y-6 max-w-xl text-center text-gradient"
@@ -139,7 +127,7 @@ const MissionSection = () => {
              md:justify-center md:px-12 lg:px-[100px] sm:px-6"
       >
         {/* Sticky Image */}
-        <div className="relative h-[492px] w-full max-w-[790px] md:w-1/2 md:sticky md:top-20">
+        <div className="relative h-[250px] md:h-[492px] w-full max-w-[790px] md:w-1/2 md:sticky md:top-20">
           <Image
             src="/images/mission.png"
             fill
