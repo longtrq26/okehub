@@ -90,7 +90,7 @@ const AboutSection = () => {
                 height="114"
                 viewBox="0 0 375 114"
                 fill="none"
-                className="absolute w-full translate-y-6 skew-y-1"
+                className="absolute w-full translate-y-6 skew-y-[1.8deg]"
                 preserveAspectRatio="none"
               >
                 <g opacity="1">

@@ -6,3 +6,9 @@
   --font-quickSand: "Quicksand", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
+
+.text-gradient {
+  background: linear-gradient(90deg, #328AE2, #FF0D39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
