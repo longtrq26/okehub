@@ -7,7 +7,7 @@ const LangToggle = ({ activeLang = "VIE", onLangChange }) => {
       <Button
         variant={activeLang === "VIE" ? "lang" : "langInactive"}
         size="sm"
-        className="text-xs md:text-sm w-8 h-8 p-0 min-w-0"
+        className="text-xs md:text-sm w-8 h-8 p-0 min-w-0 px-4!"
         onClick={() => onLangChange?.("VIE")}
       >
         <span className="font-quickSand font-semibold">VIE</span>
@@ -15,7 +15,7 @@ const LangToggle = ({ activeLang = "VIE", onLangChange }) => {
       <Button
         variant={activeLang === "ENG" ? "lang" : "langInactive"}
         size="sm"
-        className="text-xs md:text-sm w-8 h-8 p-0 min-w-0"
+        className="text-xs md:text-sm w-8 h-8 p-0 min-w-0 px-4!"
         onClick={() => onLangChange?.("ENG")}
       >
         <span className="font-quicksand font-semibold">ENG</span>
