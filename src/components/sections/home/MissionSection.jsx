@@ -2,9 +2,8 @@
 
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
-import { useScrollAnimation } from "@/hooks/useAnimation";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const missions = [
   {
@@ -29,11 +28,10 @@ const missions = [
   },
 ];
 
-const MissionItem = React.forwardRef(({ item, index }, ref) => (
+const MissionItem = React.forwardRef(({ item }, ref) => (
   <div
     ref={ref}
     className="flex flex-col items-start gap-4 py-6 md:py-20 md:px-8 lg:px-12"
-    aria-labelledby={`mission-label-${index}`}
   >
     <Image
       src={item.icon}
@@ -45,10 +43,7 @@ const MissionItem = React.forwardRef(({ item, index }, ref) => (
       loading="lazy"
     />
     <div className="flex flex-col gap-y-2.5">
-      <h3
-        id={`mission-label-${index}`}
-        className="font-inter text-xl font-bold text-[#165BB8] md:text-2xl"
-      >
+      <h3 className="font-inter text-xl font-bold text-[#165BB8] md:text-2xl">
         {item.label}
       </h3>
       <p className="font-inter text-sm text-foreground md:text-base">
@@ -57,64 +52,66 @@ const MissionItem = React.forwardRef(({ item, index }, ref) => (
     </div>
   </div>
 ));
+MissionItem.displayName = "MissionItem";
+
+const SectionHeader = ({ text, color = "#165BB8" }) => (
+  <div
+    className="flex items-center justify-center gap-1.5 font-inter text-sm font-semibold"
+    style={{ color }}
+  >
+    <svg width="6" height="6" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="3" cy="3" r="3" fill={color} />
+    </svg>
+    <p>{text}</p>
+    <svg width="6" height="6" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="3" cy="3" r="3" fill={color} />
+    </svg>
+  </div>
+);
 
 const MissionSection = () => {
-  const sectionRef = useRef(null);
-  const missionRefs = useRef([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const counterRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.4 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
+  const itemRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = missionRefs.current.indexOf(entry.target);
-            if (index !== -1) {
-              setCurrentIndex(index);
+            const idx = itemRefs.current.findIndex((el) => el === entry.target);
+            if (idx !== -1) {
+              setCurrentIndex(idx);
             }
           }
         });
       },
       {
         root: null,
-        threshold: 1,
+        threshold: 0.5,
       }
     );
 
-    missionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
+    itemRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
     });
 
     return () => {
-      missionRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
+      itemRefs.current.forEach((el) => {
+        if (el) observer.unobserve(el);
       });
     };
   }, []);
 
   return (
-    <Section ref={sectionRef} className="min-h-screen flex flex-col gap-12">
+    <Section className="min-h-screen flex flex-col gap-12">
       {/* Heading */}
       <div className="flex w-full flex-col items-center justify-center gap-4 rounded-[50%] bg-gradient-to-b from-[rgba(55,57,129,0.02)] to-[rgba(255,225,229,0.0)] px-4 md:px-8 lg:px-12">
         <div className="relative flex w-full flex-col items-center gap-y-2.5 p-6 md:w-[70%] md:p-8 lg:w-[60%]">
-          <div className="flex items-center justify-center gap-1.5 font-inter text-sm font-semibold text-[#165BB8] md:text-base">
-            <svg width="6" height="6" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="3" cy="3" r="3" fill="#165BB8" />
-            </svg>
-            <p>SỨ MỆNH</p>
-            <svg width="6" height="6" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="3" cy="3" r="3" fill="#165BB8" />
-            </svg>
-          </div>
+          <SectionHeader text="SỨ MỆNH" />
           <Heading
             level={2}
             size="sm"
-            className="opacity-0 translate-y-6 max-w-xl text-center text-gradient"
+            className="max-w-xl text-center text-gradient"
           >
             Mang lại cuộc sống tốt đẹp hơn cho những người đồng hành
           </Heading>
@@ -141,10 +138,7 @@ const MissionSection = () => {
         {/* Scroll area */}
         <div className="flex w-full flex-col md:w-1/2 pt-10 md:pt-0">
           {/* Counter */}
-          <div
-            ref={counterRef}
-            className="text-base self-end md:self-start font-inter font-semibold text-[#2A2B6B] md:sticky md:top-1/2"
-          >
+          <div className="text-base self-end md:self-start font-inter font-semibold text-[#2A2B6B] md:sticky md:top-1/2">
             {String(currentIndex + 1).padStart(2, "0")}/
             {String(missions.length).padStart(2, "0")}
           </div>
@@ -155,8 +149,7 @@ const MissionSection = () => {
               <MissionItem
                 key={index}
                 item={item}
-                index={index}
-                ref={(el) => (missionRefs.current[index] = el)}
+                ref={(el) => (itemRefs.current[index] = el)}
               />
             ))}
           </div>

@@ -7,9 +7,9 @@ const Heading = forwardRef(
 
     const sizes = {
       sm: "text-2xl sm:text-3xl md:text-4xl",
-      default: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
+      default: "text-4xl sm:text-5xl md:text-6xl lg:text-[64px]",
       lg: "text-5xl sm:text-6xl md:text-7xl lg:text-8xl",
-      hero: "text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px] xl:text-[72px]",
+      hero: "text-[32px] sm:text-[36px] md:text-[48px] lg:text-[64px]",
     };
 
     const Component = `h${level}`;

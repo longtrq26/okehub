@@ -3,35 +3,11 @@
 import Button from "@/components/ui/Button";
 import Heading from "@/components/ui/Heading";
 import Section from "@/components/ui/Section";
-import { useScrollAnimation } from "@/hooks/useAnimation";
-import React, { useRef } from "react";
+import React from "react";
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
-  const companyRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-  const headingRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.2 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-  const desc1Ref = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.4 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-  const desc2Ref = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.6 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-  const buttonRef = useScrollAnimation(
-    { y: 0, opacity: 1, duration: 0.8, delay: 0.8 },
-    { trigger: sectionRef.current, start: "top 80%" }
-  );
-
   return (
     <Section
-      ref={sectionRef}
       className="min-h-screen flex flex-col overflow-y-hidden lg:overflow-y-visible"
       backgroundImage="/images/about_bg.png"
       backgroundPosition="20% center"
@@ -123,16 +99,10 @@ const AboutSection = () => {
       }
     >
       {/* Main content */}
-      <div
-        className="relative z-10 flex h-full flex-col justify-start px-4 py-16 
-             md:justify-center md:px-12 md:my-44 lg:px-[100px] sm:px-6"
-      >
+      <div className="relative z-10 flex h-full flex-col justify-start py-12 px-4 md:justify-center md:px-12 md:my-44 lg:px-[100px] sm:px-6">
         <div className="flex flex-col gap-y-6 md:gap-y-8 max-w-[700px] lg:max-w-[600px]">
           <div className="flex flex-col gap-4">
-            <p
-              ref={companyRef}
-              className="opacity-0 font-inter translate-y-6 flex items-center text-sm text-white md:text-base uppercase gap-x-1.5"
-            >
+            <p className="font-inter flex items-center text-sm text-white md:text-base uppercase gap-x-1.5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="6"
@@ -144,29 +114,18 @@ const AboutSection = () => {
               </svg>
               Công ty Cổ phần Tập đoàn Ami&M Việt Nam
             </p>
-            <Heading
-              ref={headingRef}
-              level={2}
-              size="default"
-              className="opacity-0 translate-y-6 text-white uppercase"
-            >
+            <Heading level={2} size="default" className="text-white uppercase">
               Khởi nguồn từ Tình bằng hữu
             </Heading>
           </div>
           <div className="flex flex-col gap-7">
-            <p
-              ref={desc1Ref}
-              className="opacity-0 translate-y-6 font-inter text-sm text-white md:text-base"
-            >
+            <p className="font-inter text-sm text-white md:text-base">
               Bắt đầu từ năm 2005 – thời điểm những người bạn cùng chung chí
               hướng chia sẻ những ý tưởng đầu tiên về AMITICAS, cùng nhau nỗ lực
               không ngừng nghỉ để đến 9.9.2019, Ami&M chính thức đi vào hoạt
               động.
             </p>
-            <p
-              ref={desc2Ref}
-              className="opacity-0 translate-y-6 text-sm text-white sm:text-base md:text-lg"
-            >
+            <p className="text-sm text-white sm:text-base md:text-lg">
               Tại Ami&M, chúng tôi được sống và làm việc hết mình! Được gắn bó
               và kết nối cũng những người bằng hữu mà chúng tôi gọi là ANH EM -
               AM, được bứt phá các giới hạn bản thân để phát triển, thoả sức thử
@@ -175,9 +134,8 @@ const AboutSection = () => {
             </p>
           </div>
           <Button
-            ref={buttonRef}
             variant="primary"
-            className="opacity-0 translate-y-6 w-fit hover:bg-gradient-to-r hover:from-[#328AE2] hover:to-[#FF0D39] hover:shadow-lg transition-all duration-200"
+            className="w-fit hover:bg-gradient-to-r hover:from-[#328AE2] hover:to-[#FF0D39] hover:shadow-lg transition-colors duration-400"
           >
             Hành trình của Ami&M{" "}
             <svg

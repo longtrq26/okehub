@@ -18,7 +18,7 @@ const Button = forwardRef(
     };
 
     const sizes = {
-      sm: "px-4 py-2 text-sm",
+      sm: "px-4 md:px-6 py-2 text-sm",
       default: "px-6 py-3.5 text-base",
       lg: "px-8 py-4 text-lg",
     };

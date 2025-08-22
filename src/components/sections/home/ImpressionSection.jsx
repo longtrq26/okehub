@@ -33,11 +33,8 @@ const impressions = [
   },
 ];
 
-const ImpressionItem = React.forwardRef(({ item, index }) => (
-  <div
-    className="flex flex-row items-center gap-x-3 md:gap-x-16 py-6 md:py-20 md:px-8 lg:px-12 border-[#EDEDED] border-b last:border-b-0 md:border-l"
-    aria-labelledby={`impression-label-${index}`}
-  >
+const ImpressionItem = ({ item }) => (
+  <div className="flex flex-row items-center gap-x-3 md:gap-x-16 py-6 md:py-20 md:px-8 lg:px-12 border-[#EDEDED] border-b last:border-b-0 md:border-l">
     <div className="bg-[#FBFBFB] rounded-full">
       <Image
         src={item.icon}
@@ -51,10 +48,7 @@ const ImpressionItem = React.forwardRef(({ item, index }) => (
     </div>
 
     <div className="flex flex-col gap-y-2.5">
-      <h3
-        id={`impression-label-${index}`}
-        className="font-inter text-4xl md:text-5xl font-bold text-[#165BB8]"
-      >
+      <h3 className="font-inter text-4xl md:text-5xl font-bold text-[#165BB8]">
         {item.label}
       </h3>
       <p className="font-inter text-sm text-[#011942] md:text-base">
@@ -62,7 +56,25 @@ const ImpressionItem = React.forwardRef(({ item, index }) => (
       </p>
     </div>
   </div>
-));
+);
+
+const SectionHeader = ({ text, color = "#165BB8" }) => (
+  <div
+    className="flex items-center gap-1.5 font-inter text-sm font-semibold"
+    style={{ color }}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="7"
+      height="7"
+      viewBox="0 0 7 7"
+      fill="none"
+    >
+      <circle cx="3.92383" cy="3.5" r="3" fill={color} />
+    </svg>
+    <p>{text}</p>
+  </div>
+);
 
 const ImpressionSection = () => {
   return (
@@ -73,19 +85,7 @@ const ImpressionSection = () => {
       >
         {/* Sticky Content */}
         <div className="relative h-fit w-full md:w-1/2 md:sticky md:top-1/3 pb-24">
-          <div className="flex items-center gap-1.5 font-inter text-sm font-semibold text-[#165BB8] md:text-base">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="7"
-              height="7"
-              viewBox="0 0 7 7"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle cx="3.92383" cy="3.5" r="3" fill="#165BB8" />
-            </svg>
-            <p>TỪNG BƯỚC PHÁT TRIỂN</p>
-          </div>
+          <SectionHeader text="TỪNG BƯỚC PHÁT TRIỂN" />
           <Heading level={2} size="default" className="text-gradient pt-2.5">
             Dấu ấn Ami&M
           </Heading>
@@ -107,10 +107,10 @@ const ImpressionSection = () => {
       </div>
 
       {/* Quote Section */}
-      <div className="relative w-screen h-screen flex items-end justify-center">
+      <div className="relative w-screen h-[600px] md:h-screen flex items-end justify-center">
         <Image
           src="/images/mission.png"
-          alt="Hình nền Dấu ấn Ami&M"
+          alt="Impression"
           fill
           className="object-cover object-top"
           sizes="100vw"

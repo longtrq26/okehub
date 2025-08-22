@@ -47,7 +47,7 @@ const Header = () => {
       <div className="w-full px-2.5 md:px-12 lg:px-[100px] py-6">
         <div className="flex items-start justify-between">
           {/* Logo */}
-          <div ref={logoRef} className="opacity-0 translate-y-6">
+          <div ref={logoRef}>
             <Logo
               isScrolled={isScrolled}
               isAboveBreakpoint={isAboveBreakpoint}

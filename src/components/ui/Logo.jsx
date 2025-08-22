@@ -83,7 +83,7 @@ const Logo = ({ isScrolled, isAboveBreakpoint }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 73 38"
       fill="none"
-      className="w-[73px] h-[38px] md:w-[90px] md:h-[47px]"
+      className="w-[73px] h-[38px] md:w-[114px] md:h-[61px]"
     >
       <g clipPath="url(#clip0_16643_779)">
         <path

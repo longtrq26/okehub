@@ -10,7 +10,7 @@ const HeroSection = () => {
   const headingRef = useAnimation({
     y: 0,
     opacity: 1,
-    duration: 0.8,
+    duration: 1.2,
   });
 
   return (
@@ -198,7 +198,7 @@ const HeroSection = () => {
         <Heading
           level={1}
           size="hero"
-          className="text-white uppercase opacity-0 translate-y-10"
+          className="opacity-0 translate-y-6 text-white uppercase"
           ref={headingRef}
         >
           Đồng hành
