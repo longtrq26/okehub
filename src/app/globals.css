@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-quickSand: var(--font-quickSand);
-  --font-inter: var(--font-inter);
+  --font-quickSand: "Quicksand", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
