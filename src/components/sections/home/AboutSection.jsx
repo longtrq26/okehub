@@ -114,7 +114,11 @@ const AboutSection = () => {
               </svg>
               Công ty Cổ phần Tập đoàn Ami&M Việt Nam
             </p>
-            <Heading level={2} size="default" className="text-white uppercase">
+            <Heading
+              level={2}
+              size="default"
+              className="text-white uppercase leading-tight"
+            >
               Khởi nguồn từ Tình bằng hữu
             </Heading>
           </div>

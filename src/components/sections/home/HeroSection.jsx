@@ -15,7 +15,7 @@ const HeroSection = () => {
 
   return (
     <Section
-      className="h-screen overflow-hidden"
+      className="h-screen overflow-hidden bg-fixed"
       backgroundImage="/images/hero_bg.png"
       backgroundPosition="70% center"
       backgroundSize="cover"
@@ -184,7 +184,7 @@ const HeroSection = () => {
 
       {/* Background layer 2 */}
       <div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 bg-local"
         style={{
           backgroundImage: "url('/images/hero_layer.png')",
           backgroundSize: "cover",
@@ -198,12 +198,10 @@ const HeroSection = () => {
         <Heading
           level={1}
           size="hero"
-          className="opacity-0 translate-y-6 text-white uppercase"
+          className="opacity-0 translate-y-6 text-white uppercase max-w-xl"
           ref={headingRef}
         >
-          Đồng hành
-          <br />
-          Khởi thịnh vượng!
+          Đồng hành Khởi thịnh vượng!
         </Heading>
       </div>
     </Section>

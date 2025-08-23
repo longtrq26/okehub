@@ -52,11 +52,11 @@ const BackgroundLayer = () => {
             y2="40.7888"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.04" stop-color="#292664" stop-opacity="0" />
-            <stop offset="0.24" stop-color="#6B8ED2" stop-opacity="0.24" />
-            <stop offset="0.43" stop-color="#5CBAFF" />
-            <stop offset="0.75" stop-color="#E759AE" />
-            <stop offset="0.99" stop-color="#F4475C" />
+            <stop offset="0.04" stopColor="#292664" stopOpacity="0" />
+            <stop offset="0.24" stopColor="#6B8ED2" stopOpacity="0.24" />
+            <stop offset="0.43" stopColor="#5CBAFF" />
+            <stop offset="0.75" stopColor="#E759AE" />
+            <stop offset="0.99" stopColor="#F4475C" />
           </linearGradient>
         </defs>
       </svg>

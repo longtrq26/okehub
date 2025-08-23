@@ -105,7 +105,7 @@ const MissionSection = () => {
   return (
     <Section className="min-h-screen flex flex-col gap-12">
       {/* Heading */}
-      <div className="flex w-full flex-col items-center justify-center gap-4 rounded-[50%] bg-gradient-to-b from-[rgba(55,57,129,0.02)] to-[rgba(255,225,229,0.0)] px-4 md:px-8 lg:px-12">
+      <div className="flex w-full flex-col items-center justify-center gap-4 rounded-[50%] bg-gradient-to-b from-[rgba(55,57,129,0.04)] to-[rgba(255,225,229,0.0)] px-4 md:px-8 lg:px-12">
         <div className="relative flex w-full flex-col items-center gap-y-2.5 p-6 md:w-[70%] md:p-8 lg:w-[60%]">
           <SectionHeader text="SỨ MỆNH" />
           <Heading

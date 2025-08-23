@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 
 const Heading = forwardRef(
   ({ children, level = 2, size = "default", className, ...props }, ref) => {
-    const base = "font-quickSand font-bold leading-tight";
+    const base = "font-quickSand font-bold";
 
     const sizes = {
       sm: "text-2xl sm:text-3xl md:text-4xl",
