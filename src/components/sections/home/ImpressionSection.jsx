@@ -107,7 +107,7 @@ const ImpressionSection = () => {
       </div>
 
       {/* Quote Section */}
-      <div className="relative w-screen h-[600px] md:h-screen flex items-end justify-center">
+      <div className="relative w-full h-[600px] md:h-screen flex items-end justify-center">
         <Image
           src="/images/mission.png"
           alt="Impression"

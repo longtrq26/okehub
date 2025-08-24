@@ -19,7 +19,7 @@ const Section = forwardRef(
     return (
       <section
         ref={ref}
-        className={cn("relative w-screen", className)}
+        className={cn("relative w-full", className)}
         {...props}
       >
         {backgroundImage && (

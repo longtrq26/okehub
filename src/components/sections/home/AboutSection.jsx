@@ -24,7 +24,7 @@ const AboutSection = () => {
           />
 
           {/* Bottom layer */}
-          <div className="absolute bottom-[110px] w-screen md:bottom-[75px]">
+          <div className="absolute bottom-[110px] w-full md:bottom-[75px]">
             <div className="relative w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

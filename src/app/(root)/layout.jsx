@@ -21,7 +21,7 @@ const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col">
       <Header />
       <main className="flex-1">
         <div className="w-full mx-auto">{children}</div>
