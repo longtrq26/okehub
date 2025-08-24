@@ -78,36 +78,36 @@ const SectionHeader = ({ text, color = "#165BB8" }) => (
 
 const ImpressionSection = () => {
   return (
-    <Section className="relative flex min-h-screen w-full flex-col items-center justify-center">
-      <div
-        className="relative flex h-full flex-col md:flex-row justify-start px-4 py-16 
+    <>
+      <Section className="relative flex min-h-screen w-full flex-col items-center justify-center">
+        <div
+          className="relative flex h-full flex-col md:flex-row justify-start px-4 py-16 
              md:justify-center md:px-12 lg:px-[100px] sm:px-6"
-      >
-        {/* Sticky Content */}
-        <div className="relative h-fit w-full md:w-1/2 md:sticky md:top-1/3 pb-24">
-          <SectionHeader text="TỪNG BƯỚC PHÁT TRIỂN" />
-          <Heading level={2} size="default" className="text-gradient pt-2.5">
-            Dấu ấn Ami&M
-          </Heading>
-          <p className="font-inter text-[#011942] max-w-lg pt-3.5">
-            Những con số chỉ là một phần của câu chuyện, ý nghĩa thực sự là
-            những dấu ấn sâu đậm về sự đổi mới, trách nhiệm xã hội và sự tin cậy
-            từ những Người đồng hành.
-          </p>
-        </div>
+        >
+          {/* Sticky Content */}
+          <div className="relative h-fit w-full md:w-1/2 md:sticky md:top-1/3 pb-24">
+            <SectionHeader text="TỪNG BƯỚC PHÁT TRIỂN" />
+            <Heading level={2} size="default" className="text-gradient pt-2.5">
+              Dấu ấn Ami&M
+            </Heading>
+            <p className="font-inter text-[#011942] max-w-lg pt-3.5">
+              Những con số chỉ là một phần của câu chuyện, ý nghĩa thực sự là
+              những dấu ấn sâu đậm về sự đổi mới, trách nhiệm xã hội và sự tin
+              cậy từ những Người đồng hành.
+            </p>
+          </div>
 
-        {/* Scroll area */}
-        <div className="flex w-full flex-col md:w-1/2">
-          <div className="w-full rounded-md">
-            {impressions.map((item, index) => (
-              <ImpressionItem key={index} item={item} index={index} />
-            ))}
+          {/* Scroll area */}
+          <div className="flex w-full flex-col md:w-1/2">
+            <div className="w-full rounded-md">
+              {impressions.map((item, index) => (
+                <ImpressionItem key={index} item={item} index={index} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Quote Section */}
-      <div className="relative w-full h-[600px] md:h-screen flex items-end justify-center">
+      </Section>
+      <div className="relative w-full h-[600px] md:h-screen flex items-end justify-center overflow-hidden">
         <Image
           src="/images/mission.png"
           alt="Impression"
@@ -128,7 +128,7 @@ const ImpressionSection = () => {
           tinh thần của một tổ chức không ngừng học tập để kiến tạo giá trị.”
         </p>
       </div>
-    </Section>
+    </>
   );
 };
 
